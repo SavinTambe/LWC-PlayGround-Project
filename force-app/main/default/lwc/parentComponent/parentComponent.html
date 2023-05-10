@@ -1,0 +1,24 @@
+<template>
+    <lightning-card title="Select Object and Fields">
+        <lightning-layout>
+            <lightning-layout-item size="6">
+                <lightning-combobox 
+                    label="Select an Object"
+                    placeholder="Select an Object"
+                    options={objectList}
+                    value={objectName}
+                    onchange={onObjectChange}>
+                </lightning-combobox>
+            </lightning-layout-item>
+            <lightning-layout-item size="6">
+                <template if:true={showButton}>
+                    <c-child-component 
+                        lst-fields={lstFields} 
+                        aftercheck={handleCheckBoxClick} 
+                        aftershow={handleShowData}>
+                    </c-child-component>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

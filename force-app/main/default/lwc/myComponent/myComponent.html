@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="List of sObjects">
+        <template if:true={objectNames}>
+            <ul>
+                <template for:each={objectNames} for:item="objectName">
+                    <li key={objectName}>{objectName}</li>
+                </template>
+            </ul>
+        </template>
+        <template if:false={objectNames}>
+            <p>No sObjects found.</p>
+        </template>
+    </lightning-card>
+</template>

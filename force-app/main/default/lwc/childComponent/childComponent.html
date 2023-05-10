@@ -1,0 +1,33 @@
+<template>
+    <template if:true={showCheckBoxes}>
+        <lightning-card title="Select Fields">
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item size="12" small-device-size="12" medium-device-size="12" large-device-size="12">
+                    <template for:each={fields} for:item="field">
+                        <div key={field.value} class="slds-grid slds-wrap slds-m-around--xx-small">
+                            <div class="slds-col slds-size_1-of-12">
+                                <lightning-input type="checkbox" name={field.value} label="" onchange={handleCheckBoxClick} checked={field.checked}></lightning-input>
+                            </div>
+                            <div class="slds-col slds-size_11-of-12">
+                                <div class="slds-text-title">{field.label}</div>
+                                <div class="slds-text-body_regular">{field.value}</div>
+                            </div>
+                        </div>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </template>
+    <template if:true={showTable}>
+        <lightning-card title={objectName} >
+            <lightning-datatable
+                    key-field="Id"
+                    data={data}
+                    columns={columnsMap}
+                    onrowaction={handleRowAction}
+                    hide-checkbox-column="true"
+                    >
+            </lightning-datatable>
+        </lightning-card>
+    </template>
+</template>

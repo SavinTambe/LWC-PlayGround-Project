@@ -1,0 +1,9 @@
+<template>
+    <lightning-card title="Employee Details" icon-name="">
+        <lightning-datatable 
+        key-field="Id"
+        data={Employee__c.data}
+        columns={columns}>
+    </lightning-datatable>
+    </lightning-card>
+</template>

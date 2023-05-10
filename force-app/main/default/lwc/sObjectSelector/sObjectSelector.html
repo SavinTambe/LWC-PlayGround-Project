@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <template if:true={sObjects}>
+            <div class="slds-m-around_medium">
+                <lightning-combobox label="Select an sObject" value={selectedSObject} options={sObjects} onchange={handleSObjectChange}></lightning-combobox>
+            </div>
+            <template if:true={fields}>
+                <div class="slds-m-around_medium">
+                    <lightning-combobox label="Select a field" value={selectedField} options={fields} onchange={handleFieldChange}></lightning-combobox>
+                </div>
+                <template if:true={records}>
+                    <div class="slds-m-around_medium">
+                        <lightning-datatable key-field="Id" data={records} columns={columns} hide-checkbox-column></lightning-datatable>
+                    </div>
+                </template>
+            </template>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,39 @@
+<template>
+    <lightning-card title="List of Account (ComboBox with DataTable Demo)">
+        <lightning-combobox label="Available Accounts"
+                            value={idValue}
+                            placeholder="Select Account"
+                            options={options}
+                            onchange={handleValueChange}>
+        </lightning-combobox>
+    </lightning-card>
+
+    <template if:true={cardVisible}>
+        <lightning-card title="Related Contacts">
+                <lightning-datatable key-field="id"
+                                     data={data}
+                                     columns={columns}>
+                </lightning-datatable>
+        </lightning-card>
+    </template>
+
+    <template if:true={cardVisible}>
+        <lightning-card title="Create Contact Record">
+            <div class="slds-var-m-around_medium">
+                <lightning-record-edit-form object-api-name="Contact">
+                <lightning-input-field field-name="AccountId" disabled value={idValue}></lightning-input-field>
+                <lightning-input-field field-name="FirstName" ></lightning-input-field>
+                <lightning-input-field field-name="LastName" ></lightning-input-field>
+                <lightning-input-field field-name="Email" ></lightning-input-field><br/>
+                <lightning-button type="submit"
+                                  name="submit"
+                                  label="Create Contact"
+                                  variant="brand"
+                                  onclick={handleSubmit}>
+                </lightning-button>
+            </lightning-record-edit-form>
+            </div>
+        </lightning-card>
+    </template>
+
+</template>

@@ -1,0 +1,16 @@
+<template>
+    <template if:true={record.data}>
+    <div class="slds-grid slds-var-p-around_small" style="background-color: rgb(255, 255, 255)"  >
+        <div class="slds-col slds-size_1-of-2">
+            <lightning-formatted-text value='Name :' class="slds-text-heading_medium"></lightning-formatted-text>
+            <lightning-formatted-text value={name} class="slds-text-heading_medium">       
+            </lightning-formatted-text>
+        </div>
+        <div class="slds-col slds-size_2-of-2">
+            <lightning-formatted-text value='Phone :' class="slds-text-heading_medium"></lightning-formatted-text>
+            <lightning-formatted-text value={phone} class="slds-text-heading_medium">
+            </lightning-formatted-text>
+        </div>
+    </div>
+</template>
+</template>
